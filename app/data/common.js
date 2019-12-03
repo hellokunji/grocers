@@ -1,0 +1,73 @@
+export const groceries = [
+  {
+    id: 1,
+    slug: 'soap',
+    name: 'Soap',
+    price: 30,
+    img: 'soap.png',
+  },
+  {
+    id: 2,
+    slug: 'bread',
+    name: 'Bread',
+    price: 40,
+    img: 'bread.png',
+  },
+  {
+    id: 3,
+    slug: 'butter',
+    name: 'Butter',
+    price: 60,
+    img: 'butter.png',
+  },
+  {
+    id: 4,
+    slug: 'cheese',
+    name: 'Cheese',
+    price: 90,
+    img: 'cheese.png',
+  },
+  {
+    id: 5,
+    slug: 'coffee',
+    name: 'Coffee',
+    price: 10,
+    img: 'coffee.png',
+  },
+  {
+    id: 6,
+    slug: 'curd',
+    name: 'Curd',
+    price: 40,
+    img: 'curd.png',
+  },
+  {
+    id: 7,
+    slug: 'eggs',
+    name: 'Eggs',
+    price: 20,
+    img: 'eggs.png',
+  },
+  {
+    id: 8,
+    slug: 'honey',
+    name: 'Honey',
+    price: 45,
+    img: 'honey.png',
+  },
+  {
+    id: 9,
+    slug: 'milk',
+    name: 'Milk',
+    price: 35,
+    img: 'milk.png',
+  },
+  {
+    id: 10,
+    slug: 'salt',
+    name: 'Salt',
+    price: 55,
+    img: 'salt.png',
+  },
+];
+

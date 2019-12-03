@@ -1,0 +1,111 @@
+@import '../../../config/config';
+
+.cmn_toast {
+  position: fixed;
+  bottom: 30px;
+  left: calc(50% - 150px);
+  width: 300px;
+
+  & > .box {
+    text-decoration: none;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+    background-color: $white-color;
+    padding: 9px 15px;
+
+    & > .icon {
+      width: 40px;
+      display: inline-block;
+      vertical-align: middle;
+
+      img {
+        width: 20px;
+      }
+    }
+
+    & > .content {
+      width: calc(100% - 40px);
+      display: inline-block;
+      vertical-align: middle;
+
+      & > .title {
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      & > .desc {
+        font-size: 14px;
+        color: grey;
+      }
+    }
+  }
+
+  & > ._success {
+    text-decoration: none;
+
+    & > .icon {
+      text-decoration: none;
+
+      span {
+        color: $green-color;
+      }
+    }
+
+    & > .content {
+      text-decoration: none;
+
+      & > .title {
+        color: $green-color;
+      }
+
+      & > .desc {
+        //color: $green-color;
+      }
+    }
+  }
+
+  & > ._error {
+    text-decoration: none;
+
+    & > .icon {
+      text-decoration: none;
+
+      span {
+        color: $red-color;
+      }
+    }
+    & > .content {
+      text-decoration: none;
+
+      & > .title {
+        color: $red-color;
+      }
+
+      & > .desc {
+        //color: $red-color;
+      }
+    }
+  }
+
+  & > ._warning {
+    text-decoration: none;
+
+    & > .icon {
+      text-decoration: none;
+
+      span {
+        color: $yellow-color;
+      }
+    }
+    & > .content {
+      text-decoration: none;
+
+      & > .title {
+        color: $yellow-color;
+      }
+
+      & > .desc {
+        //color: $yellow-color;
+      }
+    }
+  }
+}

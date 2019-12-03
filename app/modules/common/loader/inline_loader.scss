@@ -1,0 +1,16 @@
+@import '../../../config/config';
+
+.cmn_inline_loader {
+  width: 100%;
+  min-height: 120px;
+  height: 100%;
+  text-align: center;
+  & > .container {
+    display: inline-block;
+    vertical-align: middle;
+
+    img {
+      width: 30px;
+    }
+  }
+}

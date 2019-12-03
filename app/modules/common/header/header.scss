@@ -1,0 +1,96 @@
+@import '../../../config/config';
+
+.header {
+  height: 87px;
+  box-shadow: 0 2px 3px rgba(202, 202, 202, 0.25);
+  padding: 24px 0;
+
+  @media (max-width: $phone) {
+    padding: 10px 0;
+    height: 60px;
+  }
+
+  .cmn_container {
+    text-decoration: none;
+
+    & > div {
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+
+    .left {
+      width: 20%;
+
+      a {
+        color: black;
+        display: block;
+
+        img {
+          width: 42px;
+          height: 42px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          padding-left: 10px;
+          font-size: 20px;
+          line-height: 23px;
+
+          @media (max-width: $phone) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 80%;
+      text-align: right;
+
+      & > div {
+        display: inline-block;
+        vertical-align: middle;
+
+        img {
+          display: inline-block;
+          vertical-align: middle;
+          width: 38px;
+          height: 38px;
+          border-radius: 19px;
+        }
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          padding-left: 10px;
+        }
+      }
+
+      .profile {
+        border-right: 1px solid $light-grey-color;
+        padding-right: 20px;
+        margin-right: 24px;
+
+        @media (max-width: $phone) {
+          border-right: none;
+        }
+      }
+
+      .logout {
+        cursor: pointer;
+
+        img {
+          text-decoration: none;
+
+          @media (max-width: $phone) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
