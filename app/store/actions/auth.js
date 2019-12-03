@@ -33,14 +33,14 @@ function* facebookSignIn(reqData) {
       credential: reqData.payload.credential,
     }));
   } else {
-    toastUpdate({
+    yield put(toastUpdate({
       show: true,
       type: 'error',
       content: {
-        title: 'Sign-in Error',
-        description: ''
+        title: 'Sign in Error',
+        description: 'Facebook error'
       },
-    });
+    }));
     yield put(facebookLoginFailure({
       error: reqData.payload.error,
     }));
