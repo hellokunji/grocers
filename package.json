@@ -1,10 +1,11 @@
 {
-  "name": "Grocers",
+  "name": "grocers",
   "version": "1.0.0",
   "description": "Grocery List Web App",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -d --progress --colors --watch",
+    "build:dev": "webpack -d --progress --colors --watch",
+    "build": "webpack -p --progress --colors",
     "start": "node ./server/index.js",
     "test": "jest"
   },
