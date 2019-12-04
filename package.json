@@ -64,5 +64,9 @@
     "redux-saga": "^0.16.2",
     "sequelize": "^5.8.9",
     "sequelize-cli": "^5.5.0"
+  },
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.10.0"
   }
 }
