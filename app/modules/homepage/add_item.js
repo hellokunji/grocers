@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import Fuse from 'fuse.js';
 import {getProductStart, getActiveProductStart} from '../../store/actions/product';
 import Card from './card';
-import './add_item.scss';
 import EmptyState from '../common/empty_state/empty_state';
 import InlinePageLoader from '../common/loader/inline_loader';
+import './add_item.scss';
 
 class AddItem extends React.Component {
 

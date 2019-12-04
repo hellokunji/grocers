@@ -8,7 +8,7 @@ export default (ComposedComponent) => {
       const {isAuthenticated} = this.props;
       let redirectUrl = null;
       if (isAuthenticated) {
-          redirectUrl = `/dashboard`;
+        redirectUrl = `/dashboard`;
       }
       return redirectUrl;
     }

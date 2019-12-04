@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import {AUTH_USER} from './action_types';
 import reducer from './combined_reducers';
@@ -15,8 +15,7 @@ if (NODE_ENV === 'DEVELOPMENT') {
     reducer,
     composeEnhancer()
   );
-}
-else {
+} else {
   store = createStoreWithMiddleware(
     reducer
   );

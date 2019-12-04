@@ -1,6 +1,6 @@
 import {createAction} from 'redux-actions';
 import {put, takeEvery, call} from 'redux-saga/effects';
-import {getMethod, postMethod, putMethod} from '../../utils/api';screenTop
+import {getMethod, postMethod} from '../../utils/api';
 import {apiConfig} from '../../config/config';
 import {formatErrorMsg} from '../../utils/helpers';
 import {
@@ -53,7 +53,7 @@ export const deleteProductSuccess = createAction(DELETE_PRODUCT_SUCCESS);
 export const deleteProductFailure = createAction(DELETE_PRODUCT_FAILURE);
 
 //GET PRODUCT
-function* getProduct(reqData) {
+function* getProduct() {
   yield put(getProductRequest());
   try {
     const {response, error} = yield call(getMethod, `${apiConfig('v1')}/product/all`);
@@ -64,8 +64,7 @@ function* getProduct(reqData) {
       yield put(getProductFailure(error));
       yield put(toastUpdate(formatErrorMsg('error', 'Error', '')));
     }
-  }
-  catch (error) {
+  } catch (error) {
     yield put(getProductFailure(error));
     yield put(toastUpdate(formatErrorMsg('error', 'Error', '')));
   }
@@ -76,7 +75,7 @@ export function* watchGetProduct() {
 }
 
 //GET ACTIVE PRODUCT
-function* getActiveProduct(reqData) {
+function* getActiveProduct() {
   yield put(getActiveProductRequest());
   try {
     const {response, error} = yield call(getMethod, `${apiConfig('v1')}/product/active`);
@@ -87,8 +86,7 @@ function* getActiveProduct(reqData) {
       yield put(getActiveProductFailure(error));
       yield put(toastUpdate(formatErrorMsg('error', 'Error', '')));
     }
-  }
-  catch (error) {
+  } catch (error) {
     yield put(getActiveProductFailure(error));
     yield put(toastUpdate(formatErrorMsg('error', 'Error', '')));
   }
@@ -110,8 +108,7 @@ function* addProduct(reqData) {
       yield put(addProductFailure(error));
       yield put(toastUpdate(formatErrorMsg('error', 'Error', `Couldn't add product`)));
     }
-  }
-  catch (error) {
+  } catch (error) {
     yield put(addProductFailure(error));
     yield put(toastUpdate(formatErrorMsg('error', 'Error', `Couldn't add product`)));
   }
@@ -133,8 +130,7 @@ function* updateProduct(reqData) {
       yield put(updateProductFailure(error));
       yield put(toastUpdate(formatErrorMsg('error', 'Error', `Couldn't update product`)));
     }
-  }
-  catch (error) {
+  } catch (error) {
     yield put(updateProductFailure(error));
     yield put(toastUpdate(formatErrorMsg('error', 'Error', `Couldn't update product`)));
   }
@@ -158,8 +154,7 @@ function* deleteProduct(reqData) {
       yield put(deleteProductFailure(error));
       yield put(toastUpdate(formatErrorMsg('error', 'Error', `Couldn't delete product`)));
     }
-  }
-  catch (error) {
+  } catch (error) {
     yield put(deleteProductFailure(error));
     yield put(toastUpdate(formatErrorMsg('error', 'Error', `Couldn't delete product`)));
   }

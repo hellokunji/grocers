@@ -21,7 +21,6 @@ const productController = {
   },
 
   addProduct: (req, res) => {
-    console.log('addProduct', req);
     if (!req.body.id) {
       res.status(400);
       res.json({error: 'Bad Data for POST'})
@@ -38,7 +37,6 @@ const productController = {
   },
 
   updateProduct: (req, res) => {
-    console.log('req',req.body);
     if (!req.body.quantity && !req.body.id) {
       res.status(400);
       res.json({error: 'Bad Data...'})
@@ -61,7 +59,6 @@ const productController = {
   },
 
   deleteProduct: (req, res) => {
-    console.log('req',req.body);
     if (!req.body.quantity && !req.body.id) {
       res.status(400);
       res.json({error: 'Bad Data...'})

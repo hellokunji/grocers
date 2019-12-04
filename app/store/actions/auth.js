@@ -1,5 +1,5 @@
 import {createAction} from 'redux-actions';
-import {call, put, takeEvery} from 'redux-saga/effects';
+import {put, takeEvery} from 'redux-saga/effects';
 import {
   FACEBOOK_LOGIN_START,
   FACEBOOK_LOGIN_REQUEST,
@@ -20,7 +20,7 @@ export const resetAuth = createAction(RESET_AUTH);
 export const resetProduct = createAction(RESET_PRODUCT);
 
 import {toastUpdate} from './layout';
-import {formatErrorMsg} from "../../utils/helpers";
+import {formatErrorMsg} from '../../utils/helpers';
 
 //SOCIAL LOGIN - FACEBOOK
 function* facebookSignIn(reqData) {

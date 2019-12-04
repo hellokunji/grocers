@@ -1,16 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {toastUpdate} from '../../../store/actions/layout';
 import classNames from 'classnames';
+import {isDataValid} from '../../../utils/helpers';
+import {toastUpdate} from '../../../store/actions/layout';
 import './toast.scss';
-import {isDataValid} from "../../../utils/helpers";
 
 class Toast extends React.Component {
 
   componentDidMount() {
     const {toast} = this.props;
     const interval = isDataValid(toast.interval) ? toast.interval : 3000;
-    setTimeout(()=> {
+    setTimeout(() => {
       this.props.toastUpdate({show: false, type: null, content: {title: null, description: null}})
     }, interval)
   }

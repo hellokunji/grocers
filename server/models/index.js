@@ -34,11 +34,11 @@ Object.keys(db).forEach(modelName => {
 
 // load models
 var models = [
-    'Products',
-    'CurrentProducts',
+  'Products',
+  'CurrentProducts',
 ];
-models.forEach(function(model) {
-    module.exports[model] = sequelize.import(__dirname + '/' + model);
+models.forEach(function (model) {
+  module.exports[model] = sequelize.import(__dirname + '/' + model);
 });
 
 db.sequelize = sequelize;

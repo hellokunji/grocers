@@ -22,13 +22,12 @@ class Todo extends React.Component {
       reqData.profile = result.additionalUserInfo.profile;
       reqData.credential = result.credential;
       this.props.facebookLoginStart(reqData);
-      // ...
     }).catch(error => {
       let reqData = {};
       reqData.success = false;
       reqData.error = error;
       this.props.facebookLoginStart(reqData);
-      console.log('error', error);
+      //console.log('error', error);
     });
   };
 

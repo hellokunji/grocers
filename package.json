@@ -17,7 +17,8 @@
     "React",
     "Redux",
     "Sass",
-    "Node"
+    "Node",
+    "Postgres"
   ],
   "author": "",
   "license": "ISC",
