@@ -1,4 +1,4 @@
 exports.buildEnvironment = () => {
-  const envConfigFile = require('fs').existsSync('.env') ? '.env' : '.env.example';
+  const envConfigFile = '.env';
   require('dotenv').config({path: envConfigFile});
 };

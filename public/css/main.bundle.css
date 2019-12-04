@@ -161,7 +161,12 @@
         margin-right: 24px; }
         @media (max-width: 767px) {
           .header .cmn_container .right .profile {
-            border-right: none; } }
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 12px;
+            padding: 0;
+            text-align: center; } }
       .header .cmn_container .right .logout {
         cursor: pointer; }
         .header .cmn_container .right .logout img {
@@ -404,7 +409,7 @@ button.icon_btn {
   text-align: center; }
   .add_item > .box {
     width: 493px;
-    height: 804px;
+    height: 94%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
     display: inline-block;
     vertical-align: middle;
@@ -412,7 +417,8 @@ button.icon_btn {
     text-align: left; }
     @media (max-width: 767px) {
       .add_item > .box {
-        width: 100%; } }
+        width: 100%;
+        height: 100%; } }
     .add_item > .box .head {
       padding: 30px 30px 20px 30px;
       position: relative;
@@ -478,11 +484,12 @@ button.icon_btn {
             top: 30px; } }
     .add_item > .box .body {
       padding: 20px 30px 30px;
-      height: calc(100% - 149px);
+      height: calc(100% - 159px);
       overflow-y: scroll; }
       @media (max-width: 767px) {
         .add_item > .box .body {
-          padding: 20px; } }
+          padding: 20px;
+          height: calc(100% - 149px); } }
       .add_item > .box .body > .item {
         padding: 5px 0; }
       .add_item > .box .body .empty {
@@ -501,7 +508,8 @@ button.icon_btn {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  overflow-y: auto; }
   .homepage > .title {
     height: 92px;
     padding: 25px 0; }
@@ -536,10 +544,13 @@ button.icon_btn {
           display: inline-block;
           vertical-align: middle; }
       .homepage > .title .cmn_container .add {
-        width: 20%;
         display: inline-block;
         vertical-align: middle;
-        text-align: right; }
+        text-align: right;
+        width: 20%; }
+        @media (max-width: 767px) {
+          .homepage > .title .cmn_container .add {
+            width: 30%; } }
   .homepage > .loading {
     position: absolute;
     width: 100%;
