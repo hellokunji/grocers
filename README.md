@@ -1,12 +1,27 @@
-# Revenue Generation Dashboard APP
+# Grocers #
+A grocery list web application
 
-##Steps to perform
+[Click here to view the website Live](https://grocers-app.herokuapp.com/)
+- - - -
 
-###Install
-npm install
+### To run the app
 
-###Build
-`npm run build`
+#### 1. Install ####
+`npm install`
 
-###Run
+#### 2. Build ####
+`npm run build:dev` for Development Build
+
+`npm run build` for Production build
+
+#### 3. Run ####
 `npm run start`
+
+- - - -
+
+### Technologies ###
+* ReactJS
+* Redux
+* NodeJS
+* Postgres
+* Sequelize
