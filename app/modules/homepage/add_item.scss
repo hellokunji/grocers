@@ -37,6 +37,30 @@
         font-size: 30px;
       }
 
+      & > .loading {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        padding: 18px 5px;
+        height: 70px;
+        top: 13px;
+        left: 0;
+
+        @media (max-width: $phone) {
+          height: 39px;
+          padding: 6px 5px;
+          top: 20px;
+        }
+
+        img {
+          width: 34px;
+
+          @media (max-width: $phone) {
+            width: 28px;
+          }
+        }
+      }
+
       .search {
         position: relative;
         margin-top: 27px;

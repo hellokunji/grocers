@@ -15,7 +15,7 @@ const Button = props => {
     >
       <div className="icon">
         {props.showLoading ? (
-          <img className="loading_icon" src='../../../../../img/loading.svg' alt="loading icon"/>
+          <img className="loading_icon" src="../../../../../img/loading.svg" alt="loading icon"/>
         ) : (
           <img className="button_icon" src="../../../../../img/plus.png" alt="add icon"/>
         )}

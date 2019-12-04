@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Fuse from 'fuse.js';
-import {getProductStart} from '../../store/actions/product';
+import {getProductStart, getActiveProductStart} from '../../store/actions/product';
 import Card from './card';
 import './add_item.scss';
-import EmptyState from "../common/empty_state/empty_state";
+import EmptyState from '../common/empty_state/empty_state';
+import InlinePageLoader from '../common/loader/inline_loader';
 
 class AddItem extends React.Component {
 
@@ -16,9 +17,12 @@ class AddItem extends React.Component {
   }
 
   componentDidMount() {
-    const {products} = this.props;
+    const {products, activeProducts} = this.props;
     if (products.apiStatus !== 'success' && products.apiStatus !== 'started') {
       this.props.getProductStart();
+    }
+    if (activeProducts.apiStatus !== 'success' && activeProducts.apiStatus !== 'started') {
+      this.props.getActiveProductStart();
     }
   }
 
@@ -53,7 +57,7 @@ class AddItem extends React.Component {
   };
 
   render() {
-    const {activeProducts, products} = this.props;
+    const {activeProducts, products, addProduct, updateProduct, deleteProduct} = this.props;
     const {data} = this.state;
     return (
       <div className="add_item">
@@ -62,6 +66,12 @@ class AddItem extends React.Component {
             <div className="title">
               Add Item
             </div>
+            {(addProduct.apiStatus === 'started' || updateProduct.apiStatus === 'started' ||
+              deleteProduct.apiStatus === 'started') && (
+              <div className="loading">
+                <img className='loading_icon' src='../../../../../img/loading.svg' alt="loading"/>
+              </div>
+            )}
             <div className="search">
               <input placeholder="Search..." onChange={e => this.onChangeInput(e.target.value)}/>
               <img src="/img/magnifier.png" alt="search icon"/>
@@ -69,27 +79,33 @@ class AddItem extends React.Component {
             <button className="done" onClick={this.props.onClose}>Done</button>
           </div>
           <div className="body">
-            {data !== null && (
+            {(products.apiStatus === 'started' || activeProducts.apiStatus === 'started') ? (
+              <InlinePageLoader/>
+            ) : (
               <React.Fragment>
-                {data.map((item, index) => {
-                  let product = Object.assign({}, item);
-                  const productIndex = activeProducts.findIndex(edge => edge.id === item.id);
-                  if (productIndex !== -1) {
-                    product.quantity = activeProducts[productIndex].quantity;
-                  } else {
-                    product.quantity = 0;
-                  }
-                  return (
-                    <div key={`current-item-${product.id}`} className="item">
-                      <Card data={product} type="small"/>
-                    </div>
-                  )
-                })}
-                {data.length === 0 && (
-                  <div className="empty">
-                    <EmptyState label={'No result found'}/>
-                  </div>
-              )}
+                {(products.data !== null && activeProducts.data !== null) && (
+                  <React.Fragment>
+                    {data.map((item, index) => {
+                      let product = Object.assign({}, item);
+                      const productIndex = activeProducts.data.findIndex(edge => edge.product_id === item.id);
+                      if (productIndex !== -1) {
+                        product.quantity = activeProducts.data[productIndex].quantity;
+                      } else {
+                        product.quantity = 0;
+                      }
+                      return (
+                        <div key={`current-item-${product.id}`} className="item">
+                          <Card data={product} type="small"/>
+                        </div>
+                      )
+                    })}
+                    {data.length === 0 && (
+                      <div className="empty">
+                        <EmptyState label={'No result found'}/>
+                      </div>
+                    )}
+                  </React.Fragment>
+                )}
               </React.Fragment>
             )}
           </div>
@@ -104,7 +120,10 @@ const mapStateToProps = state => {
   return {
     products: state.product.products,
     activeProducts: state.product.activeProducts,
+    addProduct: state.product.addProduct,
+    deleteProduct: state.product.deleteProduct,
+    updateProduct: state.product.updateProduct,
   };
 };
 
-export default connect(mapStateToProps, {getProductStart})(AddItem);
+export default connect(mapStateToProps, {getProductStart, getActiveProductStart})(AddItem);

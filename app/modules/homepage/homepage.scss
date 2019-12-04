@@ -61,6 +61,27 @@
     }
   }
 
+  & > .loading {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 18px 5px;
+    height: 70px;
+
+    @media (max-width: $phone) {
+      height: 39px;
+      padding: 6px 5px;
+    }
+
+    img {
+      width: 34px;
+
+      @media (max-width: $phone) {
+        width: 28px;
+      }
+    }
+  }
+
   & > .count {
     height: 70px;
     background-color: $light-grey-color;
@@ -81,7 +102,7 @@
         font-size: 23px;
 
         @media (max-width: $phone) {
-          font-size: 14px;
+          font-size: 16px;
         }
 
         .light {
@@ -126,6 +147,23 @@
       .empty {
         margin-top: 100px;
 
+        img {
+          text-decoration: none;
+
+          @media (max-width: $phone) {
+            width: 130px;
+            height: 130px;
+          }
+        }
+
+        .text {
+          text-decoration: none;
+
+          @media (max-width: $phone) {
+            font-size: 18px;
+          }
+        }
+
         & > button {
           box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
           width: 238px;
@@ -134,6 +172,13 @@
           border: none;
           margin-top: 30px;
           border-radius: 2px;
+
+          @media (max-width: $phone) {
+            height: 40px;
+            background: none;
+            font-size: 17px;
+            width: 190px;
+          }
         }
       }
     }

@@ -6,7 +6,7 @@
   "scripts": {
     "build:dev": "webpack -d --progress --colors --watch",
     "build": "webpack -p --progress --colors",
-    "start": "node ./server/index.js",
+    "start": "./node_modules/.bin/nodemon ./bin/www -w app.js",
     "test": "jest"
   },
   "repository": {
@@ -34,6 +34,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
+    "dotenv": "^6.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.2",
@@ -52,12 +53,15 @@
     "jest": "^23.6.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
+    "pg": "^7.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4",
-    "redux-saga": "^0.16.2"
+    "redux-saga": "^0.16.2",
+    "sequelize": "^5.8.9",
+    "sequelize-cli": "^5.5.0"
   }
 }

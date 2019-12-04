@@ -5,7 +5,7 @@ const InlinePageLoader = () => {
   return (
     <div className='cmn_inline_loader'>
       <div className='container'>
-        <img className='loading_icon' src='../../../../img/loading.svg' alt="loader"/>
+        <img className='loading_icon' src='../../../../../img/loading.svg'/>
       </div>
       <span className='_align'/>
     </div>

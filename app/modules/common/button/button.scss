@@ -34,6 +34,24 @@ button.icon_btn {
   cursor: inherit;
 }
 
+.loading_icon_btn {
+  background-color: $white-color !important;
+  border: 1px solid $light-grey-color !important;
+  padding: 2px 0 !important;
+
+  .icon {
+    text-decoration: none;
+
+    img {
+      width: 22px !important;
+    }
+  }
+
+  .text {
+    display: none;
+  }
+}
+
 .icon_btn_size_s {
   padding: 8px 10px;
   height: 34px;

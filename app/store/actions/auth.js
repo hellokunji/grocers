@@ -20,11 +20,11 @@ export const resetAuth = createAction(RESET_AUTH);
 export const resetProduct = createAction(RESET_PRODUCT);
 
 import {toastUpdate} from './layout';
+import {formatErrorMsg} from "../../utils/helpers";
 
 //SOCIAL LOGIN - FACEBOOK
 function* facebookSignIn(reqData) {
   yield put(facebookLoginRequest());
-  console.log('reqData', reqData);
   if (reqData.payload.success) {
     window.localStorage.setItem('profile', JSON.stringify(reqData.payload.profile));
     window.localStorage.setItem('credential', JSON.stringify(reqData.payload.credential));
@@ -33,14 +33,7 @@ function* facebookSignIn(reqData) {
       credential: reqData.payload.credential,
     }));
   } else {
-    yield put(toastUpdate({
-      show: true,
-      type: 'error',
-      content: {
-        title: 'Sign in Error',
-        description: 'Facebook error'
-      },
-    }));
+    yield put(toastUpdate(formatErrorMsg('error', 'Sign in Error', 'Facebook error')));
     yield put(facebookLoginFailure({
       error: reqData.payload.error,
     }));
