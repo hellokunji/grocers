@@ -5,6 +5,7 @@
   width: 100%;
   height: 100%;
   background-color: $white-color;
+  overflow-y: auto;
 
   & > .title {
     height: 92px;
@@ -53,10 +54,13 @@
       }
 
       .add {
-        width: 20%;
         display: inline-block;
         vertical-align: middle;
         text-align: right;
+
+        @media (max-width: $phone) {
+          width: 20%;
+        }
       }
     }
   }

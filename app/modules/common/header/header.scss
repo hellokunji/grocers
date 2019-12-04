@@ -76,7 +76,12 @@
         margin-right: 24px;
 
         @media (max-width: $phone) {
-          border-right: none;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 12px;
+          padding: 0;
+          text-align: center;
         }
       }
 

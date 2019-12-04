@@ -11,7 +11,7 @@
 
   & > .box {
     width: 493px;
-    height: 804px;
+    height: 94%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
     display: inline-block;
     vertical-align: middle;
@@ -20,6 +20,7 @@
 
     @media (max-width: $phone) {
       width: 100%;
+      height: 100%;
     }
 
     .head {
@@ -107,11 +108,12 @@
 
     .body {
       padding: 20px 30px 30px;
-      height: calc(100% - 149px);
+      height: calc(100% - 159px);
       overflow-y: scroll;
 
       @media (max-width: $phone) {
         padding: 20px;
+        height: calc(100% - 149px);
       }
 
       & > .item {
