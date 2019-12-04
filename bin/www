@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-let app = require('../server/app');
+let app = require('../app');
 var debug = require('debug')('express-sequelize');
 //let debug = require('debug')('elixir:server');
 var http = require('http');
