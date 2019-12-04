@@ -77,11 +77,12 @@
 
         @media (max-width: $phone) {
           position: absolute;
-          width: 100%;
-          left: 0;
+          width: 200px;
+          left: calc(50% - 100px);
           top: 12px;
           padding: 0;
           text-align: center;
+          border-right: none;
         }
       }
 
