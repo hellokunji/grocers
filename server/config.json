@@ -1,5 +1,6 @@
 {
   "development": {
+    "database": "postgres://earvpsrgkkyoyg:00eeaf8e92c2433305b249c0de9a737e7d028e8f37b889b907c1a863016d805d@ec2-174-129-254-226.compute-1.amazonaws.com:5432/d2r988v3aar0q0",
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
     "dialectOptions": {
