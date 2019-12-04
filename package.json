@@ -27,6 +27,8 @@
   },
   "homepage": "",
   "devDependencies": {
+  },
+  "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-polyfill": "^6.26.0",
@@ -42,9 +44,7 @@
     "react-hot-loader": "^4.6.3",
     "sass-loader": "^7.1.0",
     "webpack": "^4.17.2",
-    "webpack-cli": "^3.1.0"
-  },
-  "dependencies": {
+    "webpack-cli": "^3.1.0",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "errorhandler": "^1.5.1",
